@@ -101,14 +101,18 @@ class BoostContainer extends Navigator {
   StatefulElement createElement() => ContainerElement(this);
 
   static BoostContainerState tryOf(BuildContext context) {
-    final BoostContainerState container =
-        context.ancestorStateOfType(const TypeMatcher<BoostContainerState>());
+    // lbs改源码
+    final BoostContainerState container = context.findAncestorStateOfType<BoostContainerState>();
+//    final BoostContainerState container =
+//        context.ancestorStateOfType(const TypeMatcher<BoostContainerState>());
     return container;
   }
 
   static BoostContainerState of(BuildContext context) {
-    final BoostContainerState container =
-        context.ancestorStateOfType(const TypeMatcher<BoostContainerState>());
+    // lbs改源码
+    final BoostContainerState container = context.findAncestorStateOfType<BoostContainerState>();
+//    final BoostContainerState container =
+//        context.ancestorStateOfType(const TypeMatcher<BoostContainerState>());
     assert(container != null, 'not in flutter boost');
     return container;
   }
